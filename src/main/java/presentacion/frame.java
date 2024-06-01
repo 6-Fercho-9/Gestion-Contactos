@@ -263,6 +263,14 @@ public class frame extends javax.swing.JFrame {
                             }
                             frame.this.sComboBox2.setSelectedIndex(0);
                         break;
+                        case "Eliminar todos los contenidos":
+                            frame.this.vectorDeArboles[0].vaciar();
+                            frame.this.vectorDeArboles[1].vaciar();
+                            frame.this.vectorDeArboles[2].vaciar();
+                            frame.this.vectorDeArboles[3].vaciar();
+                            frame.this.reiniciarParaAbrirArchivo();
+                         break;
+                            
                             
                     }
                 }
@@ -618,7 +626,7 @@ public class frame extends javax.swing.JFrame {
         });
 
         sComboBox2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255), 2));
-        sComboBox2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Metodos", "Size", "Nivel", "Altura", "Orden Arbol B", "Orden Arbol MVias" }));
+        sComboBox2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Metodos", "Size", "Nivel", "Altura", "Orden Arbol B", "Orden Arbol MVias", "Eliminar todos los contenidos" }));
         sComboBox2.setFont(new java.awt.Font("Roboto Lt", 0, 12)); // NOI18N
         sComboBox2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1375,7 +1383,14 @@ public class frame extends javax.swing.JFrame {
            //reinicio todo
         //   System.out.println(vectorDeArboles[0].cantidadClaves());
            // System.out.println(vectorDeArboles.length);
-           this.arbol=null;//por defecto empieza en el binario
+           this.reiniciarParaAbrirArchivo();
+           
+        }else{
+            JOptionPane.showMessageDialog(rootPane, "No se encontro La ruta..", "Advertencia", JOptionPane.WARNING_MESSAGE);
+        }
+    }//GEN-LAST:event_btnAbrirArchActionPerformed
+    private void reiniciarParaAbrirArchivo(){
+        this.arbol=null;//por defecto empieza en el binario
            this.arbol=this.vectorDeArboles[0];
            this.seleccionAnterior="Arbol Binario de Busqueda";
           // this.seleccionAnterior=this.sComboBox1.getSelectedItem().toString();
@@ -1384,12 +1399,7 @@ public class frame extends javax.swing.JFrame {
            
            //para reiniciar los datos de table
            this.reiniciarDatosParaCambioDeArbol(this.vectorDeArboles[0]);
-           
-        }else{
-            JOptionPane.showMessageDialog(rootPane, "No se encontro La ruta..", "Advertencia", JOptionPane.WARNING_MESSAGE);
-        }
-    }//GEN-LAST:event_btnAbrirArchActionPerformed
-
+    }
         
     private int buscarFilaEnTabledadoToken(String token){
         for (int i = 0; i < this.tableDark1.getRowCount(); i++) {

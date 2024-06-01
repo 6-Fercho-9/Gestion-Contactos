@@ -322,13 +322,14 @@
               </Border>
             </Property>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-              <StringArray count="6">
+              <StringArray count="7">
                 <StringItem index="0" value="Metodos"/>
                 <StringItem index="1" value="Size"/>
                 <StringItem index="2" value="Nivel"/>
                 <StringItem index="3" value="Altura"/>
                 <StringItem index="4" value="Orden Arbol B"/>
                 <StringItem index="5" value="Orden Arbol MVias"/>
+                <StringItem index="6" value="Eliminar todos los contenidos"/>
               </StringArray>
             </Property>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
